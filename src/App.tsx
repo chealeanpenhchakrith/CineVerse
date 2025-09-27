@@ -1,9 +1,12 @@
 import "./App.css";
+import AppName from "./AppName";
 
 function App() {
   return (
     <>
-      <h1 className="text-blue-600">Hello World</h1>
+      <div className="bg-black h-20">
+        <AppName />
+      </div>
     </>
   );
 }
