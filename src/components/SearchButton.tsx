@@ -1,12 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
+import useStore from "../store.js";
 
 export default function SearchButton() {
+  const { home, hideHome } = useStore();
   const [inputValue, SetInputValue] = useState("");
   function handleChange(event: any) {
     SetInputValue(event.target.value);
   }
   function handleSend() {
+    if (inputValue.length !== 0) {
+      hideHome();
+    }
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=${
@@ -42,6 +47,7 @@ export default function SearchButton() {
           <circle cx="11" cy="11" r="8" />
         </svg>
       </button>
+      <h1 className="text-white">{home}</h1>
     </>
   );
 }
