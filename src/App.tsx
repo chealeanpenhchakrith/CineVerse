@@ -1,6 +1,7 @@
 import "./App.css";
-import AppName from "./AppName";
-import SearchButton from "./SearchButton";
+import AppName from "./components/AppName";
+import SearchButton from "./components/SearchButton";
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
               <SearchButton />
             </div>
           </div>
+        </div>
+        <div className="mt-35 ml-40">
+          <HeroSection />
         </div>
       </div>
     </>
