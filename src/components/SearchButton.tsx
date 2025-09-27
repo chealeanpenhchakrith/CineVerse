@@ -1,13 +1,31 @@
+import { useState } from "react";
+import axios from "axios";
+
 export default function SearchButton() {
+  const [inputValue, SetInputValue] = useState("");
+  function handleChange(event: any) {
+    SetInputValue(event.target.value);
+  }
+  function handleSend() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=${
+          import.meta.env.VITE_API_KEY
+        }`
+      )
+      .then((response) => {
+        console.log(response.data);
+      });
+  }
   return (
     <>
       <input
         className="text-white bg-[#1d2130] w-100 py-3 px-4 font-normal rounded-xs placeholder:text-[#51525f]"
         type="text"
-        name="input"
         placeholder="Search for Movies, TV Series, Celebrities & More"
+        onChange={handleChange}
       />
-      <button className="bg-[#f1c200] px-4 rounded-xs">
+      <button onClick={handleSend} className="bg-[#f1c200] px-4 rounded-xs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
