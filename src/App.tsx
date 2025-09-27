@@ -9,7 +9,7 @@ function App() {
     <>
       <div className="bg-[#121620] h-screen">
         <div>
-          <div className="flex pt-10 pl-10 items-center">
+          <div className="flex pt-10 pl-18 items-center">
             <AppName />
             <div className="flex ml-30">
               <SearchButton />
