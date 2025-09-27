@@ -3,7 +3,7 @@ import axios from "axios";
 import useStore from "../store.js";
 
 export default function SearchButton() {
-  const { home, hideHome } = useStore();
+  const { home, hideHome, updateResponse } = useStore();
   const [inputValue, SetInputValue] = useState("");
   function handleChange(event: any) {
     SetInputValue(event.target.value);
@@ -20,6 +20,7 @@ export default function SearchButton() {
       )
       .then((response) => {
         console.log(response.data);
+        updateResponse(response.data);
       });
   }
   return (

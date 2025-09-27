@@ -4,6 +4,7 @@ import SearchButton from "./components/SearchButton";
 import HeroSection from "./components/HeroSection";
 import SubHeroSection from "./components/SubHeroSection";
 import useStore from "./store.js";
+import SearchResult from "./components/SearchResult.js";
 
 function App() {
   const { home } = useStore();
@@ -17,6 +18,9 @@ function App() {
               <div className="flex ml-30">
                 <SearchButton />
               </div>
+            </div>
+            <div className="mt-40 ml-18">
+              <SearchResult />
             </div>
           </div>
         </div>
