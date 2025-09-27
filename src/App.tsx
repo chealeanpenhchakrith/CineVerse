@@ -2,6 +2,7 @@ import "./App.css";
 import AppName from "./components/AppName";
 import SearchButton from "./components/SearchButton";
 import HeroSection from "./components/HeroSection";
+import SubHeroSection from "./components/SubHeroSection";
 
 function App() {
   return (
@@ -15,8 +16,13 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="mt-35 ml-40">
-          <HeroSection />
+        <div className="flex mt-35 items-center">
+          <div className="ml-40">
+            <HeroSection />
+          </div>
+          <div className="ml-40">
+            <SubHeroSection />
+          </div>
         </div>
       </div>
     </>
