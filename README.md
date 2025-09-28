@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Cine'Pop 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![TypeScript](https://img.shields.io/badge/TypeScript-95.5%25-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![TMDb API](https://img.shields.io/badge/TMDb-API-01B4E4?logo=themoviedatabase)](https://www.themoviedb.org/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **Cine'Pop** is a movie recommendation website built with TypeScript, using the TMDb API for up-to-date movie data.  
+> Search and discover your favorite movies in a clean and beautiful interface.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖼️ Preview
 
-## Expanding the ESLint configuration
+<img width="1774" height="1105" alt="Screenshot 2025-09-29 at 12 23 33 AM" src="https://github.com/user-attachments/assets/a5eac436-a178-4c32-bd90-3f4e35b48209" />
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚩 Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 🔍 **Search Movies:** Find movies by title or keyword.
+- 🎞️ **Trending & Popular:** Browse current trending and popular movies.
+- 🎬 **Movie Details:** View cast, crew, ratings, trailers, and more.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## ⚙️ How It Works
+
+- Cine'Pop fetches real-time movie data from the TMDb API.
+- Users can search and browse movies.
+- Main functionality is developed in TypeScript, with supporting JavaScript, HTML, and CSS.
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+git clone https://github.com/chealeanpenhchakrith/CineVerse.git
+cd CineVerse
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Get your TMDb API key ([sign up here](https://www.themoviedb.org/documentation/api)).
+2. Add your key to the environment config (see `.env.example`).
+3. Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+---
+
+## 🌐 Deployed Website
+
+[**Visit Cine'Pop**](https://cine-verse-sandy.vercel.app/)
+
+---
+
+## 📚 Tech Stack
+
+| Main        | Usage               |
+|-------------|---------------------|
+| TypeScript  | Core functionality  |
+| JavaScript  | Supporting scripts  |
+| HTML        | Structure           |
+| CSS         | Styling/layout      |
+
+---
+
+## 📄 License
+
+> This project uses the TMDb API but is not endorsed or certified by TMDb.
