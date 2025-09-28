@@ -12,7 +12,7 @@ function App() {
   if (home) {
     return (
       <>
-        <div className="bg-[#121620] h-screen">
+        <div className="bg-[#121620]">
           <div>
             <div className="flex pt-10 pl-18 items-center">
               <AppName />
@@ -33,7 +33,7 @@ function App() {
   } else {
     return (
       <>
-        <div className="bg-[#121620] h-screen">
+        <div className="bg-[#121620]">
           <div>
             <div className="flex pt-10 pl-18 items-center">
               <AppName />
