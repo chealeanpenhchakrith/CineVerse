@@ -26,20 +26,25 @@ export default function MovieCard() {
   const pageResult = fetchResponse.results;
   return (
     <>
-      {pageResult.map((movie: Movie) => (
-        <div key={movie.id} className="text-white">
-          <h1>{movie.original_language}</h1>
-          <h1>{movie.release_date}</h1>
-          <h1>{movie.title}</h1>
-          <h1>TMDb : {movie.vote_average}/10</h1>
-          <img
-            width={50}
-            height={50}
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt="poster"
-          />
-        </div>
-      ))}
+      <div className="flex flex-wrap">
+        {pageResult.map((movie: Movie) => (
+          <div key={movie.id} className="text-white">
+            <img
+              className="rounded-t-sm"
+              width={140}
+              height={140}
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt="poster"
+            />
+            <div className="flex w-35 flex-wrap bg-[#1d2130] rounded-b-sm">
+              <h1>{movie.title}</h1>
+            </div>
+            {/* <h1>{movie.original_language}</h1>
+            <h1>{movie.release_date}</h1>
+            <h1>TMDb : {movie.vote_average}/10</h1> */}
+          </div>
+        ))}
+      </div>
     </>
   );
 }
