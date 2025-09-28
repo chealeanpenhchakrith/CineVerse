@@ -1,45 +1,71 @@
-import useStore from "../store";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import useStore from "../store";
 
 interface Movie {
   id: number;
-  original_title: string;
   title: string;
   overview: string;
   poster_path: string | null;
   backdrop_path: string | null;
   release_date: string;
   vote_average: number;
-  vote_count: number;
-  adult: boolean;
   genre_ids: number[];
-  original_language: string;
-  popularity: number;
-  video: boolean;
 }
 
-export default function MovieCard() {
-  const { fetchResponse } = useStore();
+export default function PopularMovies() {
+  const { popularMovies, setPopularMovies } = useStore();
 
-  if (!fetchResponse || !fetchResponse.results) {
-    return <div className="text-white">No movies to display</div>;
+  useEffect(() => {
+    // Fetch popular movies when component mounts
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${
+          import.meta.env.VITE_API_KEY
+        }`
+      )
+      .then((response) => {
+        setPopularMovies(response.data.results);
+        console.log("Popular movies:", response.data.results);
+        console.log(
+          "First movie poster path:",
+          response.data.results[0]?.poster_path
+        );
+        console.log(
+          "Full image URL:",
+          `https://image.tmdb.org/t/p/w300${response.data.results[0]?.poster_path}`
+        );
+      })
+      .catch((error) => {
+        console.error("Error fetching popular movies:", error);
+      });
+  }, [setPopularMovies]);
+
+  if (!popularMovies || popularMovies.length === 0) {
+    return (
+      <div className="text-white text-center py-8">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500"></div>
+        <p className="mt-2">Loading popular movies...</p>
+      </div>
+    );
   }
-  const pageResult = fetchResponse.results;
+
   return (
     <div className="text-white">
       {/* Section Header */}
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-amber-400 mb-2">
-          🔍 Search Results
+          🔥 Popular Movies
         </h2>
         <p className="text-gray-400">
-          Found {pageResult.length} movies matching your search
+          Discover what everyone's watching right now
         </p>
       </div>
 
       {/* Movies Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-        {pageResult.map((movie: Movie) => (
+        {popularMovies.slice(0, 18).map((movie: Movie) => (
           <Link
             key={movie.id}
             to={`/movie/detail/${movie.id}`}
@@ -72,18 +98,22 @@ export default function MovieCard() {
                 <h3 className="font-semibold text-sm md:text-base mb-2 line-clamp-2 group-hover:text-amber-400 transition-colors">
                   {movie.title}
                 </h3>
-                <p className="text-gray-400 text-xs md:text-sm mb-1">
+                <p className="text-gray-400 text-xs md:text-sm">
                   {movie.release_date
                     ? new Date(movie.release_date).getFullYear()
                     : "TBA"}
-                </p>
-                <p className="text-gray-500 text-xs">
-                  {movie.original_language.toUpperCase()}
                 </p>
               </div>
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* View More Button */}
+      <div className="text-center mt-8">
+        <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition-colors duration-200">
+          View All Popular Movies
+        </button>
       </div>
     </div>
   );
