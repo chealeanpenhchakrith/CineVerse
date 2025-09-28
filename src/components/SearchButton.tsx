@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import useStore from "../store.js";
+import useStore from "../store";
 
 export default function SearchButton() {
   const { home, hideHome, updateResponse } = useStore();

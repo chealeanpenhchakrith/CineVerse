@@ -1,4 +1,4 @@
-import useStore from "../store.js";
+import useStore from "../store";
 
 export default function SearchResult() {
   const { fetchResponse } = useStore();

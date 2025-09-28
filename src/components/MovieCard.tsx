@@ -1,4 +1,4 @@
-import useStore from "../store.js";
+import useStore from "../store";
 import { Link } from "react-router-dom";
 
 interface Movie {

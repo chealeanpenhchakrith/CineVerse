@@ -3,9 +3,9 @@ import AppName from "./components/AppName";
 import SearchButton from "./components/SearchButton";
 import HeroSection from "./components/HeroSection";
 import SubHeroSection from "./components/SubHeroSection";
-import useStore from "./store.js";
-import SearchResult from "./components/SearchResult.js";
-import MovieCard from "./components/MovieCard.js";
+import useStore from "./store";
+import SearchResult from "./components/SearchResult";
+import MovieCard from "./components/MovieCard";
 
 function App() {
   const { home } = useStore();
