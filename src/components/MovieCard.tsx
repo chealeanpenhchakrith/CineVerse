@@ -1,4 +1,5 @@
 import useStore from "../store.js";
+import { Link } from "react-router-dom";
 
 interface Movie {
   id: number;
@@ -29,21 +30,23 @@ export default function MovieCard() {
       <div className="flex flex-wrap gap-x-30 gap-y-10">
         {pageResult.map((movie: Movie) => (
           <div key={movie.id} className="text-white">
-            <img
-              className="rounded-t-sm"
-              width={200}
-              height={200}
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt="poster"
-            />
-            <div className="bg-[#1d2130]">
-              <div className="flex w-35 flex-wrap rounded-b-sm ">
-                <h1>{movie.title}</h1>
+            <Link to={`/movie/detail/${movie.id}`}>
+              <img
+                className="rounded-t-sm"
+                width={200}
+                height={200}
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt="poster"
+              />
+              <div className="bg-[#1d2130]">
+                <div className="flex w-35 flex-wrap rounded-b-sm ">
+                  <h1>{movie.title}</h1>
+                </div>
+                <h1>Language : {movie.original_language}</h1>
+                <h1>Year : {movie.release_date}</h1>
+                <h1>TMDb : {movie.vote_average}/10</h1>
               </div>
-              <h1>Language : {movie.original_language}</h1>
-              <h1>Year : {movie.release_date}</h1>
-              <h1>TMDb : {movie.vote_average}/10</h1>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
