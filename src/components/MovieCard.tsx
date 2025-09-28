@@ -28,10 +28,16 @@ export default function MovieCard() {
     <>
       {pageResult.map((movie: Movie) => (
         <div key={movie.id} className="text-white">
-          <h1>{movie.original_title}</h1>
           <h1>{movie.original_language}</h1>
-          <h1>{movie.overview}</h1>
           <h1>{movie.release_date}</h1>
+          <h1>{movie.title}</h1>
+          <h1>TMDb : {movie.vote_average}/10</h1>
+          <img
+            width={50}
+            height={50}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt="poster"
+          />
         </div>
       ))}
     </>
