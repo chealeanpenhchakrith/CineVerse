@@ -12,18 +12,18 @@ function App() {
   if (home) {
     return (
       <>
-        <div className="bg-[#121620] h-screen">
+        <div className="bg-[#121620]">
           <div>
-            <div className="flex pt-10 pl-18 items-center">
+            <div className="flex pt-10 pl-17 items-center">
               <AppName />
               <div className="flex ml-30">
                 <SearchButton />
               </div>
             </div>
-            <div className="mt-40 ml-18">
+            <div className="mt-40 ml-37">
               <SearchResult />
             </div>
-            <div>
+            <div className="flex mt-10 ml-37">
               <MovieCard />
             </div>
           </div>
