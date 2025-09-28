@@ -34,7 +34,7 @@ function App() {
           <div>
             <div className="flex pt-10 pl-18 items-center">
               <AppName />
-              <div className="flex ml-30 ml-105">
+              <div className="flex ml-105">
                 <SearchButton />
               </div>
             </div>

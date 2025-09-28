@@ -26,7 +26,7 @@ export default function MovieCard() {
   }
   const pageResult = fetchResponse.results;
   return (
-    <div className="text-white mt-20 ml-17">
+    <div className="text-white mt-20 ml-17 h-screen">
       {/* Section Header */}
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-amber-400 mb-2">
