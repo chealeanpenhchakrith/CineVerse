@@ -26,12 +26,12 @@ export default function SearchButton() {
   return (
     <>
       <input
-        className="text-white bg-[#1d2130] w-100 py-3 px-4 font-normal rounded-xs placeholder:text-[#51525f]"
+        className="text-white bg-[#1d2130] w-100 py-3 px-4 font-normal rounded-l-md placeholder:text-[#51525f] focus:outline-none"
         type="text"
         placeholder="Search for Movies, TV Series, Celebrities & More"
         onChange={handleChange}
       />
-      <button onClick={handleSend} className="bg-[#f1c200] px-4 rounded-xs">
+      <button onClick={handleSend} className="bg-amber-500 px-4 rounded-r-md">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

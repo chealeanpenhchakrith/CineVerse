@@ -52,7 +52,7 @@ export default function PopularMovies() {
   }
 
   return (
-    <div className="text-white">
+    <div className="text-white ml-20">
       {/* Section Header */}
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-amber-400 mb-2">
@@ -63,15 +63,15 @@ export default function PopularMovies() {
         </p>
       </div>
 
-      {/* Movies Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      {/* Movies Flexbox */}
+      <div className="flex flex-wrap gap-x-15 gap-y-10">
         {popularMovies.slice(0, 18).map((movie: Movie) => (
           <Link
             key={movie.id}
             to={`/movie/detail/${movie.id}`}
             className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
           >
-            <div className="bg-[#1d2130] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl">
+            <div className="bg-[#1d2130] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl w-60 flex-shrink-0">
               {/* Movie Poster */}
               <div className="relative overflow-hidden">
                 <img
@@ -107,13 +107,6 @@ export default function PopularMovies() {
             </div>
           </Link>
         ))}
-      </div>
-
-      {/* View More Button */}
-      <div className="text-center mt-8">
-        <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition-colors duration-200">
-          View All Popular Movies
-        </button>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 export default function SubHeroSection() {
   return (
     <>
-      <h1 className="text-xl text-[#4a4f58]">
+      <h1 className="text-xl text-gray-400">
         Tired of wasting time hunting for what to watch ?
       </h1>
-      <h2 className="text-xl text-[#4a4f58] mt-4">
+      <h2 className="text-xl text-gray-400 mt-4">
         With our unified search, you can explore every movie across multiple
         <br />
         streaming services instantly. <br />

@@ -72,7 +72,7 @@ export default function MovieDetail() {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-6 py-8 mt-30">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Movie Poster */}
           <div className="lg:w-1/3">

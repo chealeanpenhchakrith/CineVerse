@@ -5,7 +5,6 @@ import HeroSection from "./components/HeroSection";
 import SubHeroSection from "./components/SubHeroSection";
 import PopularMovies from "./components/PopularMovies";
 import useStore from "./store";
-import SearchResult from "./components/SearchResult";
 import MovieCard from "./components/MovieCard";
 
 function App() {
@@ -17,12 +16,9 @@ function App() {
           <div>
             <div className="flex pt-10 pl-17 items-center">
               <AppName />
-              <div className="flex ml-30">
+              <div className="flex ml-105">
                 <SearchButton />
               </div>
-            </div>
-            <div className="mt-40 ml-37">
-              <SearchResult />
             </div>
             <div className="flex mt-10 ml-37">
               <MovieCard />
@@ -38,7 +34,7 @@ function App() {
           <div>
             <div className="flex pt-10 pl-18 items-center">
               <AppName />
-              <div className="flex ml-30">
+              <div className="flex ml-30 ml-105">
                 <SearchButton />
               </div>
             </div>

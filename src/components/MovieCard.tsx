@@ -26,7 +26,7 @@ export default function MovieCard() {
   }
   const pageResult = fetchResponse.results;
   return (
-    <div className="text-white">
+    <div className="text-white mt-20 ml-17">
       {/* Section Header */}
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-amber-400 mb-2">
@@ -37,15 +37,15 @@ export default function MovieCard() {
         </p>
       </div>
 
-      {/* Movies Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      {/* Movies Flexbox */}
+      <div className="flex flex-wrap gap-10">
         {pageResult.map((movie: Movie) => (
           <Link
             key={movie.id}
             to={`/movie/detail/${movie.id}`}
             className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
           >
-            <div className="bg-[#1d2130] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl">
+            <div className="bg-[#1d2130] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl w-60 flex-shrink-0">
               {/* Movie Poster */}
               <div className="relative overflow-hidden">
                 <img
